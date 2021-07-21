@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/JetBrainsMono-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://themes/PlayerText.tres" type="Theme" id=2]
+[ext_resource path="res://assets/GamePlaySound.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/bg.jpg" type="Texture" id=4]
+[ext_resource path="res://src/menu.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="menu" type="Node2D"]
+script = ExtResource( 5 )
+gameScene = ExtResource( 6 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 271.02
+margin_top = 131.608
+margin_right = 897.02
+margin_bottom = 303.608
+theme = SubResource( 2 )
+text = "Random Platformer"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_right = 1280.0
+margin_bottom = 659.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="."]
+margin_left = 353.99
+margin_top = 317.48
+margin_right = 687.99
+margin_bottom = 396.48
+theme = ExtResource( 2 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 357.301
+margin_top = 413.965
+margin_right = 694.301
+margin_bottom = 485.965
+theme = ExtResource( 2 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 241.0
+margin_top = 519.0
+margin_right = 932.0
+margin_bottom = 594.0
+theme = ExtResource( 2 )
+text = "Made by Josias Wing "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

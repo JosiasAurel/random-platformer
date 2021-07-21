@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[node name="HUD" type="TextureRect"]
+margin_right = 1027.0
+margin_bottom = 596.0
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="RichTextLabel" parent="."]
+anchor_right = 0.019
+anchor_bottom = 0.034
+margin_left = 8.0
+margin_top = 6.0
+margin_right = 83.487
+margin_bottom = 25.736
+size_flags_stretch_ratio = 20.0
+theme = SubResource( 3 )
+visible_characters = 10
+percent_visible = 5.0
+text = "2000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jumps" type="RichTextLabel" parent="."]
+margin_left = 8.66071
+margin_top = 29.0
+margin_right = 92.6607
+margin_bottom = 69.0
+text = "23 jumps"
+__meta__ = {
+"_edit_use_anchors_": false
+}

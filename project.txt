@@ -1,0 +1,2 @@
+The goal of this project is to learn how to build a simple infinite one level platformer game.
+One character, one platform and the world is generated randomly following some rules. 
